@@ -6,7 +6,9 @@ from constants import (
 
 
 class Car:
-
+    """
+    
+    """
     def __init__(self, start_col: int, start_row: int):
         self.x = start_col * TILE_SIZE + TILE_SIZE // 2
         self.y = start_row * TILE_SIZE + TILE_SIZE // 2
