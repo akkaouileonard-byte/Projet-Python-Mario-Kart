@@ -17,8 +17,11 @@ class GameView:
         self.screen.fill(COLOR_BG)
         if model.state == GameState.MENU:
             self._draw_menu(model)
+<<<<<<< HEAD
         elif model.state == GameState.SELECT_CIRCUIT:
             self._draw_select_circuit(model)
+=======
+>>>>>>> origin/main
         elif model.state == GameState.RACING:
             self._draw_racing(model)
         pygame.display.flip()
@@ -30,7 +33,11 @@ class GameView:
             "Jeu de course 2D", True, COLOR_ACCENT)
         self.screen.blit(title_surf, title_surf.get_rect(center=(cx, 160)))
 
+<<<<<<< HEAD
         options = [("SELECTIONNEZ CIRCUIT (Enter)", GameState.SELECT_CIRCUIT),
+=======
+        options = [("JOUER (Enter)", GameState.RACING),
+>>>>>>> origin/main
                    ("QUITTER (Escape)", None)]
         for i, (label, _) in enumerate(options):
             y = 320 + i * 80
@@ -42,6 +49,7 @@ class GameView:
                 label, True, COLOR_ACCENT if i == 0 else COLOR_TEXT)
             self.screen.blit(text_surf, text_surf.get_rect(center=rect.center))
 
+<<<<<<< HEAD
     def _draw_select_circuit(self, model: GameModel) -> None:
         cx = WINDOW_WIDTH // 2
         title_surf = self.font.render("CHOISIR UN CIRCUIT", True, COLOR_ACCENT) 
@@ -51,29 +59,24 @@ class GameView:
             y = 280 + i * 80 
             rect = pygame.Rect(cx - 160, y - 25, 320, 50)
 
-            # model.selected_circuit_index와 현재 순서(i)가 일치하는지 확인
-
-            is_selected = (i == model.selected_circuit_index) 
-
-            # 선택된 항목은 노란색(COLOR_ACCENT) 강조 테두리와 글자색 적용 
+            is_selected = (i == model.selected_circuit_index)  
 
             border_color = COLOR_ACCENT if is_selected else COLOR_PANEL_BORDER 
             text_color = COLOR_ACCENT if is_selected else COLOR_TEXT 
             border_width = 3 if is_selected else 1 
 
-            # 박스 및 테두리 그리기 
             pygame.draw.rect(self.screen, COLOR_PANEL, rect, border_radius=8)
             pygame.draw.rect(self.screen, border_color, rect, border_width, border_radius=8)
             
-            # 선택된 상태면 > 서킷 이름 < 형태로 표시 
             display_text = f"> {name} <" if is_selected else name 
             text_surf = self.font.render(display_text, True, text_color)
             self.screen.blit(text_surf, text_surf.get_rect(center=rect.center))
             
-            # 4) 하단 조작 안내 텍스트 표시 
         help_surf = self.font.render("Up/Down: Choisir | Enter: Jouer | ESC: Retour", True, COLOR_TEXT)
         self.screen.blit(help_surf, help_surf.get_rect(center=(cx, 550)))
 
+=======
+>>>>>>> origin/main
     def _draw_racing(self, model: GameModel) -> None:
 
         for row_idx, row in enumerate(model.circuit.grid):
