@@ -17,14 +17,10 @@ class GameView:
         self.screen.fill(COLOR_BG)
         if model.state == GameState.MENU:
             self._draw_menu(model)
-<<<<<<< HEAD
         elif model.state == GameState.SELECT_CIRCUIT:
             self._draw_select_circuit(model)
-=======
->>>>>>> origin/main
         elif model.state == GameState.RACING:
             self._draw_racing(model)
-        pygame.display.flip()
 
     def _draw_menu(self, model: GameModel) -> None:
         cx = WINDOW_WIDTH // 2
@@ -33,11 +29,7 @@ class GameView:
             "Jeu de course 2D", True, COLOR_ACCENT)
         self.screen.blit(title_surf, title_surf.get_rect(center=(cx, 160)))
 
-<<<<<<< HEAD
         options = [("SELECTIONNEZ CIRCUIT (Enter)", GameState.SELECT_CIRCUIT),
-=======
-        options = [("JOUER (Enter)", GameState.RACING),
->>>>>>> origin/main
                    ("QUITTER (Escape)", None)]
         for i, (label, _) in enumerate(options):
             y = 320 + i * 80
@@ -49,7 +41,6 @@ class GameView:
                 label, True, COLOR_ACCENT if i == 0 else COLOR_TEXT)
             self.screen.blit(text_surf, text_surf.get_rect(center=rect.center))
 
-<<<<<<< HEAD
     def _draw_select_circuit(self, model: GameModel) -> None:
         cx = WINDOW_WIDTH // 2
         title_surf = self.font.render("CHOISIR UN CIRCUIT", True, COLOR_ACCENT) 
@@ -75,8 +66,6 @@ class GameView:
         help_surf = self.font.render("Up/Down: Choisir | Enter: Jouer | ESC: Retour", True, COLOR_TEXT)
         self.screen.blit(help_surf, help_surf.get_rect(center=(cx, 550)))
 
-=======
->>>>>>> origin/main
     def _draw_racing(self, model: GameModel) -> None:
 
         for row_idx, row in enumerate(model.circuit.grid):
