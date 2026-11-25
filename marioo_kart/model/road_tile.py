@@ -21,9 +21,8 @@ class RoadTile:
         return self.sprite
 
 class TerreTile:
-    """
-    classe représentant un terrain de terre (j'ai repris le patron RoadTile pour faire les autres)
-    """
+
+# classe représentant un terrain de terre (j'ai repris le patron RoadTile pour faire les autres)
 
     def __init__(self, col: int, row: int):
             self.col = col
@@ -41,9 +40,9 @@ class TerreTile:
         return self.sprite
 
 class HerbeTile:
-    """
-    classe représentant un terrain d'herbe (j'ai repris le patron RoadTile pour faire les autres)
-    """
+
+# classe représentant un terrain d'herbe (j'ai repris le patron RoadTile pour faire les autres)
+
 
     def __init__(self, col: int, row: int):
             self.col = col
@@ -61,9 +60,8 @@ class HerbeTile:
         return self.sprite
 
 class GlaceTile:
-    """
-    classe représentant un terrain de glace (j'ai repris le patron RoadTile pour faire les autres)
-    """
+
+# classe représentant un terrain de glace (j'ai repris le patron RoadTile pour faire les autres)
 
     def __init__(self, col: int, row: int):
             self.col = col
@@ -81,9 +79,8 @@ class GlaceTile:
         return self.sprite
 
 class VideTile:
-    """
-    classe représentant un terrain de vide (j'ai repris le patron RoadTile pour faire les autres)
-    """
+
+# classe représentant un terrain de vide (j'ai repris le patron RoadTile pour faire les autres)
 
     def __init__(self, col: int, row: int):
             self.col = col
