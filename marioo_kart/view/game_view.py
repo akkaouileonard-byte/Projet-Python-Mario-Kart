@@ -34,7 +34,7 @@ class GameView:
                    ("QUITTER (Escape)", None)]
         for i, (label, _) in enumerate(options):
             y = 320 + i * 80
-            rect = pygame.Rect(cx - 140, y - 25, 280, 50)
+            rect = pygame.Rect(cx - 140, y - 25, 320, 50)
             pygame.draw.rect(self.screen, COLOR_PANEL, rect, border_radius=8)
             pygame.draw.rect(self.screen, COLOR_PANEL_BORDER,
                              rect, 2, border_radius=8)
@@ -46,7 +46,7 @@ class GameView:
         cx = WINDOW_WIDTH // 2
         title_surf = self.font.render("CHOISIR UN CIRCUIT", True, COLOR_ACCENT) 
         self.screen.blit(title_surf, title_surf.get_rect(center=(cx, 140)))
-        circuit_names = ["Circuit 1 (Classic)", "Circuit 2 (Advance)"]
+        circuit_names = ["Circuit 1 (Classic)", "Circuit 2 (Dirt)"]
         for i, name in enumerate(circuit_names):
             y = 280 + i * 80 
             rect = pygame.Rect(cx - 160, y - 25, 320, 50)
