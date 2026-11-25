@@ -21,6 +21,7 @@ class GameView:
             self._draw_select_circuit(model)
         elif model.state == GameState.RACING:
             self._draw_racing(model)
+        pygame.display.flip()
 
     def _draw_menu(self, model: GameModel) -> None:
         cx = WINDOW_WIDTH // 2
