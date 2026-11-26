@@ -9,11 +9,14 @@ GRID_ROWS = 12
 CAR_ACCELERATION = 0.05
 CAR_WIDTH = 30
 CAR_HEIGHT = 50
+CAR_MAX_REVERSE_SPEED = 2.0
+CAR_STEER_SPEED = 3.0
 
 
 class GameState:
     MENU = "menu"
     RACING = "racing"
+    SELECT_CIRCUIT = "select_circuit"
 
 
 # --- Couleurs UI ---

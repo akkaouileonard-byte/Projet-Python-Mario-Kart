@@ -40,13 +40,25 @@ class GameController:
 
         if state == GameState.MENU:
             self.handle_menu_key(key)
+        elif state == GameState.SELECT_CIRCUIT:
+            self.handle_select_circuit_key(key)
 
     def handle_menu_key(self, key: int) -> None:
         if key == pygame.K_RETURN:
-            self.model.load_circuit()
-            self.model.state = GameState.RACING
+            self.model.state = GameState.SELECT_CIRCUIT
         elif key == pygame.K_ESCAPE:
             self.quit()
+
+    def handle_select_circuit_key(self, key: int) -> None:
+        if key == pygame.K_UP or key == pygame.K_LEFT: 
+            self.model.previous_circuit()
+        elif key == pygame.K_DOWN or key == pygame.K_RIGHT: 
+            self.model.next_circuit()
+        elif key == pygame.K_RETURN: 
+            self.model.load_circuit() 
+            self.model.state = GameState.RACING 
+        elif key == pygame.K_ESCAPE:
+            self.model.state = GameState.MENU
 
     def update(self) -> None:
         if self.model.state != GameState.RACING:
@@ -60,6 +72,12 @@ class GameController:
     def apply_input(self, car, player_input) -> None:
         if player_input['accelerate']:
             car.accelerate()
+        if player_input['brake']:
+            car.brake()
+        if player_input['turn_right']:
+            car.turn_right()
+        if player_input['turn_left']:
+            car.turn_left()
 
     def render(self) -> None:
         self.view.draw(self.model)
