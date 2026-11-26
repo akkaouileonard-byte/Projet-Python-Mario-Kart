@@ -1,7 +1,7 @@
 import pygame
 import math
 from constants import (
-    CAR_ACCELERATION, CAR_WIDTH, CAR_HEIGHT, TILE_SIZE, CAR_MAX_REVERSE_SPEED
+    CAR_ACCELERATION, CAR_WIDTH, CAR_HEIGHT, TILE_SIZE, CAR_MAX_REVERSE_SPEED, CAR_STEER_SPEED
 )
 
 class Car:
@@ -30,6 +30,12 @@ class Car:
         self.speed += -CAR_ACCELERATION
         if self.speed < -CAR_MAX_REVERSE_SPEED:
             self.speed = -CAR_MAX_REVERSE_SPEED
+
+    def turn_right(self) -> None:
+        self.angle += CAR_STEER_SPEED
+
+    def turn_left(self) -> None:
+        self.angle += -CAR_STEER_SPEED
 
     def update_position(self) -> None:
         """
