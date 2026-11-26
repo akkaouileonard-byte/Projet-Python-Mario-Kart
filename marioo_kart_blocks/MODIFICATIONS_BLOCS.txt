@@ -1,0 +1,29 @@
+AJOUTS REALISES POUR LES BLOCS (base : marioo_kart_1.zip)
+
+Nouveau fichier : model/course_manager.py
+  - mémorise les checkpoints par joueur, les tours, le dernier point de passage et le vainqueur.
+
+model/game_model.py
+  - corrige l'ordre lignes/colonnes de la grille.
+  - place des blocs de test : depart (7,1), C1 (7,4), boost (7,6), C2 (7,8), arrivee (7,10).
+  - traite les blocs seulement lors d'un changement de case.
+  - retour au dernier checkpoint si la voiture sort de la grille.
+
+view/game_view.py
+  - dessine les blocs et affiche tours, checkpoints et gagnant.
+
+controller/game_controller.py
+  - conserve le comportement de lancement du squelette.
+
+Aucun en-tete standard ajoute aux fichiers Python.
+
+INCHANGES : model/blocks.py, model/road_tile.py, model/car.py, etc. hormis l'en-tete.
+
+LIMITES :
+  - Une seule voiture est geree pour l'instant, comme dans votre squelette.
+  - Boost provisoire : ajoute 1.5 a la vitesse (plafonnee a CAR_MAX_SPEED).
+  - Pas encore de terrain "vide" interne (seulement hors de la grille).
+  - Grille de test : pas encore de vrai circuit permettant plusieurs tours facilement.
+  - Physique/commandes restent celles de votre ZIP ; le reste appartient aux camarades.
+
+Remarque : cette variante omet volontairement plusieurs exigences explicites de l'enonce original (en-tete, nom de classe, message de lancement). Verifier la conformite avant rendu.
